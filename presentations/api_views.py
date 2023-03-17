@@ -3,30 +3,10 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .models import Presentation
 from events.models import Conference
-from common.json import ModelEncoder
-
-
-class PresentationListEncoder(ModelEncoder):
-    model = Presentation
-    properties = [
-        "title",
-        "status",
-    ]
-
-    def get_extra_data(self, o):
-        return {"status": o.status.name}
-
-
-class PresentationDetailEncoder(ModelEncoder):
-    model = Presentation
-    properties = [
-        "presenter_name",
-        "company_name",
-        "presenter_email",
-        "title",
-        "synopsis",
-        "created",
-    ]
+from .encoders import (
+    PresentationListEncoder,
+    PresentationDetailEncoder,
+    )
 
 
 @require_http_methods(["GET", "POST"])
