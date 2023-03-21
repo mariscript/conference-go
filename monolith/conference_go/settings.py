@@ -9,14 +9,14 @@ SECRET_KEY = (
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "monolith"]
 
 AUTH_USER_MODEL = "accounts.User"
 
 
 INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
-    "attendees.apps.AttendeesConfig",
+    # "attendees.apps.AttendeesConfig",
     "events.apps.EventsConfig",
     "presentations.apps.PresentationsConfig",
     "django.contrib.admin",

@@ -1,5 +1,5 @@
 from common.json import ModelEncoder
-from .models import Attendee
+from .models import Attendee, ConferenceVO
 
 
 class AttendeeListEncoder(ModelEncoder):
@@ -7,6 +7,11 @@ class AttendeeListEncoder(ModelEncoder):
     properties = [
         "name"
     ]
+
+
+class ConferenceVODetailEncoder(ModelEncoder):
+    model = ConferenceVO
+    properties = ["name", "import_href"]
 
 
 class AttendeeDetailEncoder(ModelEncoder):
