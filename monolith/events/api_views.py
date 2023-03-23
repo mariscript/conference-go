@@ -130,4 +130,4 @@ def api_show_location(request, id):
             location,
             encoder=LocationDetailEncoder,
             safe=False,
-    )
+        )
